@@ -8,6 +8,9 @@ Session.vim
 .netrwhist
 *~
 
+# Compiled javascript and map files
+*.js
+*.js.map
 
 ### Node ###
 # Logs
