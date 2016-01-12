@@ -1,5 +1,5 @@
 {
-  "name": "angular-2-quickstart",
+  "name": "wall-of-fame",
   "version": "1.0.0",
   "scripts": {
     "tsc": "tsc",
