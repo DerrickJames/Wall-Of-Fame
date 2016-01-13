@@ -1,5 +1,8 @@
 import {Component} from 'angular2/core';
+import {OnInit} from 'angular2/core';
+
 import {Ninja} from './ninja';
+import {NinjaService} from './ninja.service';
 import {NinjaDetailComponent} from './ninja-detail.component';
 
 @Component({
@@ -74,27 +77,26 @@ import {NinjaDetailComponent} from './ninja-detail.component';
         }
     `],
 
-    directives: [NinjaDetailComponent]
+    directives: [NinjaDetailComponent],
+    providers: [NinjaService]
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit {
     public title  = 'Ninjas Wall Of Fame';
-    public ninjas = NINJAS;
+    public ninjas: Ninja[];
 
     public selectedNinja: Ninja;
 
+    constructor(private _ninjaService: NinjaService) { }
+
+    ngOnInit() {
+        this.getNinjas();
+    }
+
     onSelect(ninja: Ninja) { this.selectedNinja = ninja; }
+
+    getNinjas() {
+        this._ninjaService.getNinjas().then(ninjas => this.ninjas = ninjas);
+    }
 }
 
-var NINJAS: Ninja[] = [
-    { "id": 1, "name": "Derrick James" },
-    { "id": 2, "name": "Athman Gude" },
-    { "id": 3, "name": "Ronny Nyaga" },
-    { "id": 4, "name": "Morris Maina" },
-    { "id": 5, "name": "James Mshai" },
-    { "id": 6, "name": "Steve Kiriba" },
-    { "id": 7, "name": "Steve Murathe" },
-    { "id": 8, "name": "Mary Nunga" },
-    { "id": 9, "name": "Leone Munene" },
-    { "id": 10, "name": "Lavender Naomi" }
-];
