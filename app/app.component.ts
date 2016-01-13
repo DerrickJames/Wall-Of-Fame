@@ -1,9 +1,6 @@
 import {Component} from 'angular2/core';
-
-interface Ninja {
-    id: number;
-    name: string;
-}
+import {Ninja} from './ninja';
+import {NinjaDetailComponent} from './ninja-detail.component';
 
 @Component({
     selector: 'my-app',
@@ -19,14 +16,7 @@ interface Ninja {
             </li>
         </ul>
 
-        <div *ngIf="selectedNinja">
-            <h2>{{selectedNinja.name}} details!</h2>
-            <div><label>ID: </label>{{selectedNinja.id}}</div>
-            <div>
-                <label>NAME: </label>
-                <div><input [(ngModel)]="selectedNinja.name" placeholder="Name"></div>
-            </div>
-        </div>
+        <ninja-detail [ninja]="selectedNinja"></ninja-detail>
     `,
 
     styles: [`
@@ -82,7 +72,9 @@ interface Ninja {
             margin-right: .8em;
             border-radius: 4px 0px 0px 4px;
         }
-    `]
+    `],
+
+    directives: [NinjaDetailComponent]
 })
 
 export class AppComponent {
