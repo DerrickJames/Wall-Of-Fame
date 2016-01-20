@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>Wall Of Fame Unit Tests</title>
+        <link rel="stylesheet" 
+              href="../node_modules/jasmine-core/lib/jasmine-core/jasmine.css">
+
+        <script src="../node_modules/jasmine-core/lib/jasmine-core/jasmine.js">
+        </script>
+        <script src="../node_modules/jasmine-core/lib/jasmine-core/jasmine-html.js">
+        </script>
+        <script src="../node_modules/jasmine-core/lib/jasmine-core/boot.js">
+        </script>
+        
+        <script src="../node_modules/systemjs/dist/system.src.js"></script>
+    </head>
+
+    <body>
+
+        <script>
+
+            (function() {
+            
+                System.config({
+                    packages: {
+                        'app': { defaultExtension: 'js' }
+                    }
+                });
+
+                var imports = [
+                    'app/app.component.spec'
+
+                ].map(function(spec) { return System.import(spec); });
+
+                Promise.all(imports)
+                       .then(window.onload)
+                       .catch(console.error.bind(console));
+            })();
+
+        </script>
+
+    </body>
+
+</html>
