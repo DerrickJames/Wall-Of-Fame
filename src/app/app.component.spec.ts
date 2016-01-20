@@ -1,4 +1,4 @@
-describe('1st tests', () => {
+describe('AppComponent', () => {
 
     it('true is true', () => expect(true).toEqual(true));
 
