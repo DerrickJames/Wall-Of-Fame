@@ -3,6 +3,7 @@ import {OnInit} from 'angular2/core';
 
 import {Ninja} from './ninja';
 import {NinjaService} from './ninja.service';
+import {InitCapsPipe} from './init-caps-pipe';
 import {NinjaDetailComponent} from './ninja-detail.component';
 
 @Component({
@@ -15,7 +16,7 @@ import {NinjaDetailComponent} from './ninja-detail.component';
                 (click)="onSelect(ninja)"
                 [class.selected]="ninja === selectedNinja">
 
-                <span class="badge">{{ninja.id}}</span> {{ninja.name}}
+                <span class="badge">{{ninja.id}}</span> {{ninja.name | initCaps}}
             </li>
         </ul>
 
@@ -78,7 +79,8 @@ import {NinjaDetailComponent} from './ninja-detail.component';
     `],
 
     directives: [NinjaDetailComponent],
-    providers: [NinjaService]
+    providers: [NinjaService],
+    pipes: [InitCapsPipe]
 })
 
 export class AppComponent implements OnInit {
