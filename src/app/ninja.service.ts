@@ -1,4 +1,4 @@
-import {NINJAS} from './mock-ninjas';
+import {NINJAS} from './ninjas.mock';
 import {Injectable} from 'angular2/core';
 
 @Injectable()
