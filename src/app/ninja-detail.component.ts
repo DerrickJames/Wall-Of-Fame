@@ -1,5 +1,5 @@
 import {Component} from 'angular2/core';
-import {Ninja} from './ninja';
+import {Ninja} from './ninja.interface';
 import {InitCapsPipe} from './init-caps.pipe';
 
 @Component({

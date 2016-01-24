@@ -1,7 +1,7 @@
 import {Component} from 'angular2/core';
 import {OnInit} from 'angular2/core';
 
-import {Ninja} from './ninja';
+import {Ninja} from './ninja.interface';
 import {NinjaService} from './ninja.service';
 import {InitCapsPipe} from './init-caps.pipe';
 import {NinjaDetailComponent} from './ninja-detail.component';
