@@ -1,6 +1,6 @@
 import {Component} from 'angular2/core';
 import {Ninja} from './ninja';
-import {InitCapsPipe} from './init-caps-pipe';
+import {InitCapsPipe} from './init-caps.pipe';
 
 @Component({
     selector: 'ninja-detail',

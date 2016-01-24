@@ -1,4 +1,4 @@
-import {InitCapsPipe} from './init-caps-pipe';
+import {InitCapsPipe} from './init-caps.pipe';
 
 describe('InitCapsPipe', () => {
     let pipe: InitCapsPipe;
