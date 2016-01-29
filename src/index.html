@@ -8,12 +8,13 @@
         <script src="../node_modules/systemjs/dist/system.src.js"></script>
         <script src="../node_modules/rxjs/bundles/Rx.js"></script>
         <script src="../node_modules/angular2/bundles/angular2.dev.js"></script>
+        <script src="../node_modules/angular2/bundles/router.dev.js"></script>
 
         <!-- Configure SystemJS -->
         <script>
 
             System.config({
-                packages: {        
+                packages: {
                     app: {
                         format: 'register',
                         defaultExtension: 'js'
@@ -27,6 +28,8 @@
         </script>
 
     </head>
+
+    <base href="/">
 
     <!-- Display the application -->
     <body>
