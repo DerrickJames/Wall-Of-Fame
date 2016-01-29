@@ -8,11 +8,7 @@ import {NinjaDetailComponent} from './ninja-detail.component';
 
 @Component({
     selector: 'dashboard',
-    template: `
-        <h2>Dashboard</h2>
-        <p>This is the dashboard!</p>
-    `,
-
+    templateUrl: 'src/app/dashboard.component.html',
     pipes: [InitCapsPipe]
 })
 
