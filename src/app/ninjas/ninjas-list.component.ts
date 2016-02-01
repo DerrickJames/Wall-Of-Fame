@@ -3,13 +3,13 @@ import {OnInit} from 'angular2/core';
 
 import {Ninja} from './ninja.interface';
 import {NinjaService} from './ninja.service';
-import {InitCapsPipe} from './init-caps.pipe';
+import {InitCapsPipe} from '../blocks/pipes/init-caps.pipe';
 import {NinjaDetailComponent} from './ninja-detail.component';
 
 @Component({
     selector: 'my-ninjas',
-    templateUrl: 'src/app/ninjas.component.html',
-    styleUrls: ['src/app/ninjas.component.css'],
+    templateUrl: 'src/app/ninjas/ninjas.component.html',
+    styleUrls: ['src/app/ninjas/ninjas.component.css'],
     directives: [NinjaDetailComponent],
     pipes: [InitCapsPipe]
 })

@@ -2,9 +2,9 @@ import {Component} from 'angular2/core';
 import {OnInit} from 'angular2/core';
 import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 
-import {NinjaService} from './ninja.service';
-import {NinjasComponent} from './ninjas.component';
-import {DashboardComponent} from './dashboard.component';
+import {NinjaService} from '../ninjas/ninja.service';
+import {NinjasComponent} from '../ninjas/ninjas.component';
+import {DashboardComponent} from '../dashboard/dashboard.component';
 
 @Component({
     selector: 'my-app',
