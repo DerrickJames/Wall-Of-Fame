@@ -2,30 +2,17 @@ import {Component} from 'angular2/core';
 import {OnInit} from 'angular2/core';
 import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router';
 
+import {ROUTES} from './routes';
 import {NinjaService} from '../ninjas/ninja.service';
-import {NinjasComponent} from '../ninjas/ninjas.component';
-import {DashboardComponent} from '../dashboard/dashboard.component';
 
 @Component({
     selector: 'my-app',
-    template: `
-        <h1>{{title}}</h1> 
-        <nav>
-            <a [routerLink]="['Dashboard']">Dashboard</a>
-            <a [routerLink]="['Ninjas']">Ninjas</a>
-        </nav>
-        <router-outlet></router-outlet>
-    `,
-
+    templateUrl: 'src/app/core/app.component.html',
     providers: [NinjaService],
     directives: [ROUTER_DIRECTIVES]
 })
 
-@RouteConfig([
-    {path: '/dashboard', name:'Dashboard', component: DashboardComponent, useAsDefault: true},
-    {path: '/ninjas', name:'Ninjas', component: NinjasComponent},
-
-])
+@RouteConfig(ROUTES)
 
 export class AppComponent {
     public title  = 'Ninjas Wall Of Fame';
