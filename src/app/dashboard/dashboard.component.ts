@@ -7,7 +7,6 @@ import {InitCapsPipe} from '../blocks/pipes/init-caps.pipe';
 import {NinjaDetailComponent} from '../ninjas/ninja-detail.component';
 
 @Component({
-    selector: 'dashboard',
     templateUrl: 'src/app/dashboard/dashboard.component.html',
     pipes: [InitCapsPipe]
 })
