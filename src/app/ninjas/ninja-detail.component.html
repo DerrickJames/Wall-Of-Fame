@@ -1,0 +1,8 @@
+<div *ngIf="ninja">
+    <h2>{{ninja.name | initCaps}} details!</h2>
+    <div><label>ID: </label>{{ninja.id}}</div>
+    <div>
+        <label>NAME: </label>
+        <div><input [(ngModel)]="ninja.name" placeholder="Name"></div>
+    </div>
+</div>

@@ -5,16 +5,7 @@ import {InitCapsPipe} from '../blocks/pipes/init-caps.pipe';
 @Component({
     selector: 'ninja-detail',
     inputs: ['ninja'],
-    template: `
-        <div *ngIf="ninja">
-            <h2>{{ninja.name | initCaps}} details!</h2>
-            <div><label>ID: </label>{{ninja.id}}</div>
-            <div>
-                <label>NAME: </label>
-                <div><input [(ngModel)]="ninja.name" placeholder="Name"></div>
-            </div>
-        </div>
-    `,
+    templateUrl: 'src/app/ninjas/ninja-detail.component.html',
     pipes: [InitCapsPipe]
 })
 

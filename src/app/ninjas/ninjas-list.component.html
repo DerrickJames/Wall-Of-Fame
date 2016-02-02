@@ -1,0 +1,11 @@
+<h2>Ninjas List</h2>
+<ul class="list-items">
+    <li *ngFor="#ninja of ninjas" 
+        (click)="onSelect(ninja)"
+        [class.selected]="ninja === selectedNinja">
+
+        <span class="badge">{{ninja.id}}</span> {{ninja.name | initCaps}}
+    </li>
+</ul>
+
+<ninja-detail [ninja]="selectedNinja"></ninja-detail>

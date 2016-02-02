@@ -7,14 +7,13 @@ import {InitCapsPipe} from '../blocks/pipes/init-caps.pipe';
 import {NinjaDetailComponent} from './ninja-detail.component';
 
 @Component({
-    selector: 'my-ninjas',
-    templateUrl: 'src/app/ninjas/ninjas.component.html',
-    styleUrls: ['src/app/ninjas/ninjas.component.css'],
+    templateUrl: 'src/app/ninjas/ninjas-list.component.html',
+    styleUrls: ['src/app/ninjas/ninjas-list.component.css'],
     directives: [NinjaDetailComponent],
     pipes: [InitCapsPipe]
 })
 
-export class NinjasComponent implements OnInit {
+export class NinjasListComponent implements OnInit {
     public ninjas: Ninja[];
     public selectedNinja: Ninja;
 
