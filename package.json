@@ -25,6 +25,8 @@
     "zone.js": "0.5.10"
   },
   "devDependencies": {
+    "babel-core": "^6.4.5",
+    "babel-preset-es2015": "^6.3.13",
     "concurrently": "^1.0.0",
     "del": "^2.2.0",
     "gulp": "^3.9.0",
