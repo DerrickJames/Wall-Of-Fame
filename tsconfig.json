@@ -11,5 +11,9 @@
     },
     "exclude": [
         "node_modules"
+    ],
+
+    "filesGlob": [
+        "node_modules/gulp-tslint/index.d.ts"
     ]
 }
