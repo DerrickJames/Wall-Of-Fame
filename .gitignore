@@ -9,8 +9,8 @@ Session.vim
 *~
 
 # Compiled javascript and map files
-*.js
-*.js.map
+src/**/*.js
+src/**/*.js.map
 
 ### Node ###
 # Logs
