@@ -12,7 +12,7 @@ gulp.task('help', plugins.taskListing);
 gulp.task('default', ['help']);
 
 gulp.task('vet', () => {
-    plugins.util.log(plugins.util.colors.green('Analyzing source with TSLint!'));
+    log('Analyzing source with TSLint!');
 
     //return gulp.src('src/app/**/*.ts')
     //    .pipe(plugins.tslint.tslint())
@@ -20,9 +20,9 @@ gulp.task('vet', () => {
 });
 
 gulp.task('styles', () => {
-    plugins.util.log('Compiling: ' + plugins.util.colors.green('LESS ---> CSS'));
+    log('Compiling: ' + plugins.util.colors.yellow('LESS ---> CSS'));
 
-   return gulp
+    return gulp
         .src(CONFIG.less)
         .pipe(plugins.plumber())
         .pipe(plugins.less())
@@ -31,6 +31,18 @@ gulp.task('styles', () => {
 });
 
 gulp.task('clean', () => {
-   plugins.util.log(plugins.util.colors.green('Cleaning files somehow'));
+    log('Cleaning files somehow');
 
 });
+
+function log(msg) {
+    if(typeof(msg) === 'object') {
+        for(var item in msg) {
+            if(msg.hasOwnProperty(item)) {
+                plugins.util.log(plugins.util.colors.green(msg[item]));
+            }
+        }
+    } else {
+        plugins.util.log(plugins.util.colors.green(msg));
+    }
+}
