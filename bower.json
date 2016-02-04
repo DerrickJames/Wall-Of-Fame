@@ -1,0 +1,24 @@
+{
+  "name": "wall-of-fame",
+  "version": "0.0.0",
+  "homepage": "https://github.com/DerrickJames/Wall-Of-Fame",
+  "authors": [
+    "DerrickJames <dmushangi@gmail.com>"
+  ],
+  "description": "My Angular2 Playground",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "www/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "font-awesome": "fontawesome#^4.5.0",
+    "bootstrap": "^3.3.6"
+  }
+}
