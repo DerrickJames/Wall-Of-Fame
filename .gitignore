@@ -12,6 +12,12 @@ Session.vim
 src/**/*.js
 src/**/*.js.map
 
+# Temporary files
+.tmp
+
+# Bower components
+bower_components
+
 ### Node ###
 # Logs
 logs
