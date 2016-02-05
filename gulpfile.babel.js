@@ -28,7 +28,16 @@ gulp.task('styles', () => {
         .pipe(plugins.plumber())
         .pipe(plugins.less())
         .pipe(plugins.autoprefixer({browser: ['last 2 version', '> 5%']}))
-        .pipe(gulp.dest(CONFIG.tempCss));
+        .pipe(gulp.dest(CONFIG.tmpCss));
+});
+
+gulp.task('templates', () => {
+   log(plugins, 'Compiling: ' + plugins.util.colors.yellow('JADE ---> HTML'));
+
+   return gulp
+    .src(CONFIG.jade)
+    .pipe(plugins.jade({pretty: true}))
+    .pipe(gulp.dest(CONFIG.tmpTemplates));
 });
 
 gulp.task('clean', () => {
