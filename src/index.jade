@@ -1,0 +1,32 @@
+doctype html
+html(lang="en")
+
+    head
+        title Wall Of Fame
+
+        // Load libraries
+        script(src='../node_modules/angular2/bundles/angular2-polyfills.js')
+        script(src='../node_modules/systemjs/dist/system.src.js')
+        script(src='../node_modules/rxjs/bundles/Rx.js')
+        script(src='../node_modules/angular2/bundles/angular2.dev.js')
+        script(src='../node_modules/angular2/bundles/router.dev.js')
+
+        // Configure SystemJS
+        script(type='text/javascript').
+            System.config({
+                packages: {
+                    app: {
+                        format: 'register',
+                        defaultExtension: 'js'
+                    }
+                }     
+            });
+
+            System.import('app/boot')
+                  .then(null, console.error.bind(console));
+
+    base(href='/')/
+
+    // Display the application
+    body
+        my-app Loading...
