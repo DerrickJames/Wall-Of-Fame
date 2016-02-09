@@ -76,3 +76,9 @@ gulp.task('clean-images', () => {
 
    del(files);
 });
+
+gulp.task('clean-fonts', () => {
+    var files = CONFIG.build + 'fonts/**/*.*';
+
+    del(files);
+});
