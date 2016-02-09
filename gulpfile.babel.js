@@ -70,3 +70,9 @@ gulp.task('clean-styles', () => {
 
    del(files);
 });
+
+gulp.task('clean-images', () => {
+   var files = CONFIG.build + 'images/**/*.*';
+
+   del(files);
+});
