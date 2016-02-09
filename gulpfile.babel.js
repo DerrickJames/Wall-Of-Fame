@@ -41,7 +41,7 @@ gulp.task('templates', () => {
 });
 
 gulp.task('fonts', () => {
-   log('Copying fonts');
+   log(plugins, 'Copying fonts');
 
    return gulp
     .src(CONFIG.fonts)
