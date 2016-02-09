@@ -20,7 +20,7 @@ gulp.task('vet', () => {
     //    .pipe(plugins.tslint.report('verbose'));
 });
 
-gulp.task('styles', () => {
+gulp.task('styles', ['clean-styles'], () => {
     log(plugins, 'Compiling: ' + plugins.util.colors.yellow('LESS ---> CSS'));
 
     return gulp
@@ -40,7 +40,7 @@ gulp.task('templates', () => {
     .pipe(gulp.dest(CONFIG.tmpTemplates));
 });
 
-gulp.task('fonts', () => {
+gulp.task('fonts', ['clean-fonts'], () => {
    log(plugins, 'Copying fonts');
 
    return gulp
@@ -48,7 +48,7 @@ gulp.task('fonts', () => {
     .pipe(gulp.dest(CONFIG.build + 'fonts'));
 });
 
-gulp.task('images', () => {
+gulp.task('images', ['clean-images'], () => {
    log(plugins, 'Copying and compressing images');
 
    return gulp
