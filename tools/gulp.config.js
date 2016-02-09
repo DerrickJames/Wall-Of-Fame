@@ -11,6 +11,6 @@ export const CONFIG = {
     ],
     tmpCss: `${TMP}styles/`,
     tmpTemplates: `${TMP}templates/`,
-    dev: `./builds/dev/`,
-    prod: `./builds/prod/`
+    build: `./build/`,
+    fonts: `./bower_components/font-awesome/fonts/**/*.*`
 };
