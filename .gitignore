@@ -15,6 +15,9 @@ src/**/*.js.map
 # Temporary files
 .tmp
 
+# Directory for build step output
+build
+
 # Bower components
 bower_components
 
