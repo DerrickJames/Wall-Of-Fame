@@ -10,5 +10,7 @@ export const CONFIG = {
         `${APP_SRC}**.jade`
     ],
     tmpCss: `${TMP}styles/`,
-    tmpTemplates: `${TMP}templates/`
+    tmpTemplates: `${TMP}templates/`,
+    dev: `./builds/dev/`,
+    prod: `./builds/prod/`
 };
