@@ -48,6 +48,15 @@ gulp.task('fonts', () => {
     .pipe(gulp.dest(CONFIG.build + 'fonts'));
 });
 
+gulp.task('images', () => {
+   log(plugins, 'Copying and compressing images');
+
+   return gulp
+    .src(CONFIG.images)
+    .pipe(plugins.imagemin({optimizationLevel: 4}))
+    .pipe(gulp.dest(CONFIG.build + 'images'));
+});
+
 gulp.task('clean', (done) => {
     var deleteConfig = [].concat(TMP, CONFIG.build);
 
