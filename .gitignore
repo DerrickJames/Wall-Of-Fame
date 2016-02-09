@@ -1,5 +1,9 @@
 # Created by https://www.gitignore.io/api/vim,node
 
+# Git
+.DS_Store
+src/.DS_Store
+
 ### Vim ###
 [._]*.s[a-w][a-z]
 [._]s[a-w][a-z]
