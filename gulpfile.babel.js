@@ -40,10 +40,18 @@ gulp.task('templates', () => {
     .pipe(gulp.dest(CONFIG.tmpTemplates));
 });
 
-gulp.task('clean', (done) => {
-    var deleteConfig = [].concat(TMP, CONFIG.dev, CONFIG.prod);
+gulp.task('fonts', () => {
+   log('Copying fonts');
 
-    log(plugins, 'Cleaning builds & temp folders');
+   return gulp
+    .src(CONFIG.fonts)
+    .pipe(gulp.dest(CONFIG.build + 'fonts'));
+});
+
+gulp.task('clean', (done) => {
+    var deleteConfig = [].concat(TMP, CONFIG.build);
+
+    log(plugins, 'Cleaning build & temp folders');
 
     del(deleteConfig, done);
 });
