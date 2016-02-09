@@ -4,8 +4,8 @@ import gulp from 'gulp';
 import del from 'del';
 import tscConfig from './tsconfig';
 import gulpPlugins from 'gulp-load-plugins';
-import {CONFIG} from './tools/gulp.config';
 import {log} from './tools/utils';
+import {CONFIG, TMP} from './tools/gulp.config';
 
 const plugins = gulpPlugins({lazy: true});
 
@@ -40,7 +40,10 @@ gulp.task('templates', () => {
     .pipe(gulp.dest(CONFIG.tmpTemplates));
 });
 
-gulp.task('clean', () => {
-    log(plugins, 'Cleaning files somehow');
+gulp.task('clean', (done) => {
+    var deleteConfig = [].concat(TMP, CONFIG.dev, CONFIG.prod);
 
+    log(plugins, 'Cleaning builds & temp folders');
+
+    del(deleteConfig, done);
 });
