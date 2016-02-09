@@ -64,3 +64,9 @@ gulp.task('clean', (done) => {
 
     del(deleteConfig, done);
 });
+
+gulp.task('clean-styles', () => {
+   var files = CONFIG.tmpCss + '**/*.css';
+
+   del(files);
+});
