@@ -82,3 +82,7 @@ gulp.task('clean-fonts', () => {
 
     del(files);
 });
+
+gulp.task('less-watcher', () => {
+   gulp.watch([CONFIG.less], ['styles']);
+});
