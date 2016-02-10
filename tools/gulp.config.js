@@ -13,5 +13,24 @@ export const CONFIG = {
     tmpTemplates: `${TMP}templates/`,
     build: `./build/`,
     fonts: `./bower_components/font-awesome/fonts/**/*.*`,
-    images: `${ROOT_SRC}images/**/*.*`
+    images: `${ROOT_SRC}images/**/*.*`,
+
+    /**********************************
+     * Bower and NPM locations
+     *********************************/
+    bower: {
+        bowerJson: require('../bower.json'),
+        directory: '../bower_components',
+        ignorePath: '../..'
+    }
 };
+
+export = function getWiredepDefaultOptions() {
+    var options = {
+        bowerJson: CONFIG.bower.bowerJson,
+        directory: CONFIG.bower.directory,
+        ignorePath: CONFIG.bower.ignorePath
+    };
+
+    return options;
+}
