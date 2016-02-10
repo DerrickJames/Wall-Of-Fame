@@ -1,4 +1,4 @@
-import {Ninja} from './ninja.interface';
+import {Ninja} from "./ninja.interface";
 
 export var NINJAS: Ninja[] = [
     { "id": 1, "name": "derrick james" },

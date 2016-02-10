@@ -1,5 +1,5 @@
-import {NINJAS} from './ninjas.mock';
-import {Injectable} from 'angular2/core';
+import {NINJAS} from "./ninjas.mock";
+import {Injectable} from "angular2/core";
 
 @Injectable()
 export class NinjaService {

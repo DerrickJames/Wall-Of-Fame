@@ -14,6 +14,10 @@ export const CONFIG = {
     build: `./build/`,
     fonts: `./bower_components/font-awesome/fonts/**/*.*`,
     images: `${ROOT_SRC}images/**/*.*`,
+    index: `${ROOT_SRC}index.html`,
+    js: [
+
+    ],
 
     /**********************************
      * Bower and NPM locations
@@ -25,7 +29,7 @@ export const CONFIG = {
     }
 };
 
-export = function getWiredepDefaultOptions() {
+export function getWiredepDefaultOptions() {
     var options = {
         bowerJson: CONFIG.bower.bowerJson,
         directory: CONFIG.bower.directory,
