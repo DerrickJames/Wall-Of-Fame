@@ -5,7 +5,7 @@ import del from 'del';
 import tscConfig from './tsconfig';
 import gulpPlugins from 'gulp-load-plugins';
 import {log} from './tools/utils';
-import {CONFIG, TMP} from './tools/gulp.config';
+import {CONFIG, TMP, ROOT_SRC} from './tools/gulp.config';
 
 const plugins = gulpPlugins({lazy: true});
 
@@ -15,9 +15,9 @@ gulp.task('default', ['help']);
 gulp.task('vet', () => {
     log(plugins, 'Analyzing source with TSLint!');
 
-    //return gulp.src('src/app/**/*.ts')
-    //    .pipe(plugins.tslint.tslint())
-    //    .pipe(plugins.tslint.report('verbose'));
+    return gulp.src('src/app/**/*.ts')
+        .pipe(plugins.tslint())
+        .pipe(plugins.tslint.report('prose'));
 });
 
 gulp.task('styles', ['clean-styles'], () => {
@@ -84,5 +84,19 @@ gulp.task('clean-fonts', () => {
 });
 
 gulp.task('less-watcher', () => {
-   gulp.watch([CONFIG.less], ['styles']);
+    gulp.watch([CONFIG.less], ['styles']);
+});
+
+gulp.task('wiredep', () => {
+    log(plugins, 'Wiring Ip: ' + 
+        plugins.util.colors.yellow('Bower css & js + app js ---> index.html'));
+
+    var wiredep = require('wiredep').stream,
+        options = CONFIG.getWiredepDefaultOptions();
+
+/**    return gulp
+        .src(CONFIG.index)
+        .pipe(wiredep(options))
+        .pipe(plugins.inject(gulp.src(CONFIG.js)))
+        .pipe(gulp.dest(ROOT_SRC));*/
 });
